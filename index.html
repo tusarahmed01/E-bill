@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>E-Bill</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row panel panel-info">
+      <div class="panel-heading text-uppercase text-center">
+        <h2>Electric Bill</h2>
+      </div>
+    </div>
+      <form name="calc">
+        How many units did you consume this month? <br><input type="number" name="current" placeholder="kWh"><br><br>                                                        
+        Cost per KwH: <br><input type="number" name="cost" placeholder="¢"><br><br>
+        
+        Your Electricity Bill is:<br> <input type="number" name="result" placeholder="$"><br><br>
+        
+        <input type="button" value="Calculate" onClick="bill()">
+    </form>
+  </div>
+  </div>
+  <script>
+    function bill(){
+  var current, cost, res;
+  current=Number(document.calc.current.value);
+  cost=Number(document.calc.cost.value);
+
+res=current*cost;
+document.calc.result.value= res;
+}
+  </script>
+</body>
+</html>
